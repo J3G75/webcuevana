@@ -98,10 +98,12 @@ router.put('/:mediaId',[
             return res.status(400).json({ mensaje: errors.array() });
         }
 
+        /*
         const existeMediaPorSerial = await Media.findOne({ serial: req.body.serial });
         if (existeMediaPorSerial) {
             return res.status(400).send('serial ya existe en media');
         }
+        */
 
         let media = await Media.findById(req.params.mediaId);
         if(!media){
